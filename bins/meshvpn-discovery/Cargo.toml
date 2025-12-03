@@ -1,0 +1,23 @@
+[package]
+name = "meshvpn-discovery"
+description = "MeshVPN Discovery Server - P2P peer discovery and connection brokering"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "meshvpn-discovery"
+path = "src/main.rs"
+
+[dependencies]
+meshvpn-network = { path = "../../crates/meshvpn-network" }
+
+tokio = { workspace = true }
+serde = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+clap = { version = "4.4", features = ["derive"] }
+dashmap = "6.0"
+getrandom = "0.2"

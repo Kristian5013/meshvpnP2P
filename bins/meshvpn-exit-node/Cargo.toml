@@ -1,0 +1,30 @@
+[package]
+name = "meshvpn-exit-node"
+description = "MeshVPN Exit Node - EC2 exit node for MeshVPN network"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "meshvpn-exit"
+path = "src/main.rs"
+
+[dependencies]
+meshvpn-crypto = { path = "../../crates/meshvpn-crypto" }
+meshvpn-network = { path = "../../crates/meshvpn-network" }
+meshvpn-core = { path = "../../crates/meshvpn-core" }
+meshvpn-dht = { path = "../../crates/meshvpn-dht" }
+meshvpn-exit = { path = "../../crates/meshvpn-exit" }
+meshvpn-payment = { path = "../../crates/meshvpn-payment" }
+
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+toml = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+clap = { version = "4.4", features = ["derive"] }
+rand = { workspace = true }
