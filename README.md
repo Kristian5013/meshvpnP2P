@@ -182,14 +182,19 @@ The speed was possible because:
 
 ## 🧠 Philosophical Foundation
 
-MeshVPN is inspired by **Pressure Ontology** - a unified philosophical framework that explains how systems seek equilibrium through local interactions:
+MeshVPN's design is rooted in [**Pressure Ontology**](https://github.com/Kristian5013/pressure-ontology) - a unified philosophical framework explaining phenomena from cosmology to system design.
 
-- **DHT routing**: Center-seeking through distance minimization
-- **Circuit building**: Sequential deviation compensation  
-- **Relay mechanics**: Pressure redistribution
-- **Path selection**: Following gradients toward equilibrium
+**Key principles applied in MeshVPN:**
+- **DHT routing** = center-seeking through pressure gradients
+- **Circuit building** = sequential deviation with compensation  
+- **Relay mechanics** = pressure redistribution
+- **Path selection** = gradient descent toward equilibrium
 
-See [PRESSURE_ONTOLOGY.md](docs/PRESSURE_ONTOLOGY.md) for the complete framework.
+**[View Complete Framework (47+ concepts) →](https://github.com/Kristian5013/pressure-ontology)**
+
+*Developed at 5-30 seconds per concept over 4 months.*
+
+**"Code is philosophy made executable."**
 
 ## 🤝 Contributing
 
