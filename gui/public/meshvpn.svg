@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="meshGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a5b4fc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c4b5fd;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Shield background -->
+  <path d="M256 32L48 112v144c0 123.7 88.3 238.5 208 272 119.7-33.5 208-148.3 208-272V112L256 32z"
+        fill="url(#shieldGradient)"/>
+
+  <!-- Shield inner border -->
+  <path d="M256 56L72 128v128c0 107.4 76.9 207.4 184 237.7 107.1-30.3 184-130.3 184-237.7V128L256 56z"
+        fill="none" stroke="url(#meshGradient)" stroke-width="4" opacity="0.5"/>
+
+  <!-- Mesh network nodes -->
+  <circle cx="256" cy="180" r="24" fill="url(#meshGradient)"/>
+  <circle cx="176" cy="280" r="18" fill="url(#meshGradient)"/>
+  <circle cx="336" cy="280" r="18" fill="url(#meshGradient)"/>
+  <circle cx="200" cy="370" r="16" fill="url(#meshGradient)"/>
+  <circle cx="312" cy="370" r="16" fill="url(#meshGradient)"/>
+
+  <!-- Mesh connections -->
+  <line x1="256" y1="180" x2="176" y2="280" stroke="url(#meshGradient)" stroke-width="3" opacity="0.8"/>
+  <line x1="256" y1="180" x2="336" y2="280" stroke="url(#meshGradient)" stroke-width="3" opacity="0.8"/>
+  <line x1="176" y1="280" x2="336" y2="280" stroke="url(#meshGradient)" stroke-width="3" opacity="0.8"/>
+  <line x1="176" y1="280" x2="200" y2="370" stroke="url(#meshGradient)" stroke-width="3" opacity="0.8"/>
+  <line x1="336" y1="280" x2="312" y2="370" stroke="url(#meshGradient)" stroke-width="3" opacity="0.8"/>
+  <line x1="200" y1="370" x2="312" y2="370" stroke="url(#meshGradient)" stroke-width="3" opacity="0.8"/>
+  <line x1="176" y1="280" x2="312" y2="370" stroke="url(#meshGradient)" stroke-width="2" opacity="0.5"/>
+  <line x1="336" y1="280" x2="200" y2="370" stroke="url(#meshGradient)" stroke-width="2" opacity="0.5"/>
+</svg>

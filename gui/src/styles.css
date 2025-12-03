@@ -1,0 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a4a6a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5a5a7a;
+}
+
+/* Prevent text selection in UI elements */
+.no-select {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Custom animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.8);
+  }
+}
+
+.connected-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button hover effects */
+.btn-primary {
+  @apply bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700
+         text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200
+         shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+}
+
+.btn-danger {
+  @apply bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700
+         text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200
+         shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+}
+
+/* Card styles */
+.card {
+  @apply bg-gray-800/50 rounded-xl p-4 border border-gray-700/50
+         hover:border-gray-600/50 transition-all duration-200;
+}
+
+.card-hover {
+  @apply hover:bg-gray-800/70 hover:shadow-lg cursor-pointer;
+}
+
+/* Status indicators */
+.status-dot {
+  @apply w-3 h-3 rounded-full;
+}
+
+.status-connected {
+  @apply bg-green-500 shadow-lg shadow-green-500/50;
+}
+
+.status-disconnected {
+  @apply bg-gray-500;
+}
+
+.status-connecting {
+  @apply bg-yellow-500 animate-pulse;
+}
+
+.status-error {
+  @apply bg-red-500 shadow-lg shadow-red-500/50;
+}
+
+/* Server list item */
+.server-item {
+  @apply flex items-center justify-between p-3 rounded-lg
+         bg-gray-800/30 hover:bg-gray-700/50 cursor-pointer
+         transition-all duration-150 border border-transparent
+         hover:border-indigo-500/30;
+}
+
+.server-item.selected {
+  @apply bg-indigo-900/30 border-indigo-500/50;
+}
+
+/* Load indicator */
+.load-bar {
+  @apply h-1.5 rounded-full bg-gray-700;
+}
+
+.load-bar-fill {
+  @apply h-full rounded-full transition-all duration-300;
+}
+
+.load-low {
+  @apply bg-green-500;
+}
+
+.load-medium {
+  @apply bg-yellow-500;
+}
+
+.load-high {
+  @apply bg-red-500;
+}
+
+/* Stats grid */
+.stats-grid {
+  @apply grid grid-cols-2 gap-4;
+}
+
+.stat-item {
+  @apply bg-gray-800/30 rounded-lg p-3 text-center;
+}
+
+.stat-value {
+  @apply text-2xl font-bold text-white;
+}
+
+.stat-label {
+  @apply text-xs text-gray-400 uppercase tracking-wider;
+}
+
+/* Navigation */
+.nav-item {
+  @apply flex flex-col items-center justify-center p-2 rounded-lg
+         text-gray-400 hover:text-white hover:bg-gray-800/50
+         transition-all duration-150 cursor-pointer;
+}
+
+.nav-item.active {
+  @apply text-indigo-400 bg-indigo-900/30;
+}
+
+/* Toggle switch */
+.toggle {
+  @apply relative inline-flex h-6 w-11 items-center rounded-full
+         transition-colors duration-200 focus:outline-none;
+}
+
+.toggle-enabled {
+  @apply bg-indigo-600;
+}
+
+.toggle-disabled {
+  @apply bg-gray-600;
+}
+
+.toggle-knob {
+  @apply inline-block h-4 w-4 transform rounded-full bg-white
+         transition-transform duration-200 shadow-md;
+}
+
+.toggle-knob-enabled {
+  @apply translate-x-6;
+}
+
+.toggle-knob-disabled {
+  @apply translate-x-1;
+}
+
+/* Subscription cards */
+.subscription-card {
+  @apply relative overflow-hidden rounded-2xl p-6
+         border border-gray-700/50 transition-all duration-300;
+}
+
+.subscription-card:hover {
+  @apply border-indigo-500/50 transform -translate-y-1;
+}
+
+.subscription-popular {
+  @apply border-indigo-500 bg-gradient-to-b from-indigo-900/30 to-transparent;
+}
+
+.subscription-badge {
+  @apply absolute top-0 right-0 bg-indigo-500 text-white text-xs
+         font-bold px-3 py-1 rounded-bl-lg;
+}
+
+/* Input styles */
+.input {
+  @apply w-full bg-gray-800/50 border border-gray-700 rounded-lg
+         px-4 py-2 text-white placeholder-gray-500
+         focus:outline-none focus:border-indigo-500 focus:ring-1
+         focus:ring-indigo-500 transition-all duration-200;
+}
+
+/* Tooltip */
+.tooltip {
+  @apply invisible absolute z-50 px-2 py-1 text-xs text-white
+         bg-gray-900 rounded shadow-lg whitespace-nowrap;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible;
+}
+
+/* Fade transitions */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+
+/* Slide transitions */
+.slide-up-enter {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.slide-up-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 300ms ease-out;
+}
+
+/* Draggable title bar region */
+.titlebar-drag {
+  -webkit-app-region: drag;
+}
+
+.titlebar-no-drag {
+  -webkit-app-region: no-drag;
+}
