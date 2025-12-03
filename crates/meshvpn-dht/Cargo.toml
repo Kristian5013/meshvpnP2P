@@ -1,0 +1,29 @@
+[package]
+name = "meshvpn-dht"
+description = "Kademlia-based DHT for MeshVPN peer discovery"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+meshvpn-crypto = { path = "../meshvpn-crypto" }
+meshvpn-network = { path = "../meshvpn-network" }
+meshvpn-core = { path = "../meshvpn-core" }
+
+tokio = { workspace = true }
+async-trait = { workspace = true }
+futures = { workspace = true }
+bytes = { workspace = true }
+serde = { workspace = true }
+bincode = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+rand = { workspace = true }
+chrono = { workspace = true }
+blake3 = { workspace = true }
+ed25519-dalek = { workspace = true }
+serde-big-array = "0.5"
+hex = "0.4"
+
+[dev-dependencies]
+tokio-test = "0.4"

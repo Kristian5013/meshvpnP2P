@@ -1,0 +1,25 @@
+[package]
+name = "meshvpn-crypto"
+description = "Cryptographic primitives for MeshVPN - X25519, ChaCha20-Poly1305, Ed25519, Onion encryption"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+x25519-dalek = { workspace = true }
+ed25519-dalek = { workspace = true }
+chacha20poly1305 = { workspace = true }
+blake3 = { workspace = true }
+hkdf = { workspace = true }
+sha2 = { workspace = true }
+rand = { workspace = true }
+rand_core = { workspace = true }
+zeroize = { workspace = true }
+serde = { workspace = true }
+serde-big-array = "0.5"
+bincode = { workspace = true }
+bytes = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+hex = "0.4"

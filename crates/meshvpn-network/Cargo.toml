@@ -1,0 +1,57 @@
+[package]
+name = "meshvpn-network"
+description = "Network layer for MeshVPN - TUN/TAP adapters, UDP transport, NAT traversal"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+meshvpn-crypto = { path = "../meshvpn-crypto" }
+
+tokio = { workspace = true }
+async-trait = { workspace = true }
+futures = { workspace = true }
+bytes = { workspace = true }
+socket2 = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+serde = { workspace = true }
+bincode = { workspace = true }
+
+# WireGuard userspace implementation (fork with updated deps)
+boringtun = { package = "boringtun-easytier", version = "0.6" }
+base64 = "0.21"
+rand = { workspace = true }
+
+# P2P NAT traversal
+blake3 = "1.5"
+hex = "0.4"
+getrandom = "0.2"
+serde_bytes = "0.11"
+
+# Onion routing encryption
+chacha20poly1305 = "0.10"
+x25519-dalek = { version = "2.0", features = ["static_secrets"] }
+
+# Cross-platform TUN
+[target.'cfg(target_os = "linux")'.dependencies]
+tun = { version = "0.6", features = ["async"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+tun = { version = "0.6", features = ["async"] }
+
+[target.'cfg(target_os = "windows")'.dependencies]
+wintun = "0.4"
+windows-sys = { version = "0.52", features = [
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_System_Threading",
+    "Win32_NetworkManagement_IpHelper",
+    "Win32_NetworkManagement_Ndis",
+    "Win32_Networking_WinSock",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+] }
+
+[dev-dependencies]
+tokio-test = "0.4"
