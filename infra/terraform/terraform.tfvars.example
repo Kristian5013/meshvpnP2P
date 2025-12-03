@@ -1,0 +1,51 @@
+# MeshVPN Terraform Variables Example
+# Copy this file to terraform.tfvars and customize for your environment
+
+# Project settings
+project_name = "meshvpn"
+environment  = "prod"  # prod, staging, or dev
+
+# AWS regions
+primary_region = "us-east-1"
+regions = [
+  "us-east-1",
+  "us-west-2",
+  "eu-west-1",
+  "ap-northeast-1"
+]
+
+# Network configuration
+vpn_port = 51820
+
+# EC2 configuration
+instance_type    = "t3.medium"  # t3.medium for prod, t3.micro for dev
+desired_capacity = 2
+min_capacity     = 1
+max_capacity     = 10
+
+# Management access (CIDR blocks allowed to SSH)
+management_cidrs = [
+  "10.0.0.0/8",       # Your VPN/internal network
+  "203.0.113.0/24"    # Your office IP range
+]
+
+# Optional: SSH key pair
+# key_pair_name = "meshvpn-admin"
+
+# Monitoring
+enable_enhanced_monitoring = true
+log_retention_days         = 30
+
+# Cost optimization (NOT recommended for production)
+enable_spot_instances = false
+# spot_price = "0.05"
+
+# IPv6 support
+enable_ipv6 = false
+
+# Additional tags
+custom_tags = {
+  Team    = "Infrastructure"
+  Owner   = "admin@example.com"
+  Service = "VPN"
+}
